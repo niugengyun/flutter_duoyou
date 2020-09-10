@@ -1,0 +1,67 @@
+group 'com.easytbk.flutter_duoyou'
+version '1.0'
+
+buildscript {
+    ext.kotlin_version = '1.3.72'
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+//        flatDir {
+//            dirs project(':flutter_duoyou').file('libs')
+//            // e.g. dirs project(':url_launcher').file('libs')  - don't miss the ':'
+//        }
+        flatDir {
+            dirs project(':flutter_duoyou').file('libs')
+//            dirs 'libs'
+
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+        multiDexEnabled true
+
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+//    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation(name:'dy-ad-sdk-1.9.5', ext: 'aar')
+    implementation(name:'moku-planet-sdk-1.0.10', ext: 'aar')
+    implementation(name:'xzzq_ywsdk_release_1.1.1', ext: 'aar')
+    implementation 'com.squareup.okhttp3:okhttp:3.12.10'
+    // implementation 'com.tencent.tbs.tbssdk:sdk:43903'
+    implementation 'com.alibaba:fastjson:1.2.68'
+    // implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
+    implementation 'com.liulishuo.filedownloader:library:1.7.7'
+    implementation "org.greenrobot:eventbus:3.1.0-RC"
+    implementation 'com.google.code.gson:gson:2.8.5'
+//    implementation files('libs/flutter.jar')
+}
+
