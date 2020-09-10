@@ -77,19 +77,18 @@ class FlutterDuoyouPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             var mediaUserId = call.argument<String>("mediaUserId")
             var oaid = call.argument<String>("oaid")
             if (appId == null || appId.trim { it <= ' ' }.isEmpty()) {
-//                result.error("500", "appId can't be null", null);
-                appId = "1414"
+                result.error("500", "appId can't be null", null);
+                return;
             }
             if (appSecret == null || appSecret.trim { it <= ' ' }.isEmpty()) {
-//                result.error("500", "appSecret can't be null", null);
-                appSecret = "i0x39fgexugkzddd8l45e637hd71qruu"
+               result.error("500", "appSecret can't be null", null);
+                return;
             }
             if (mediaUserId == null || mediaUserId.trim { it <= ' ' }.isEmpty()) {
                 result.error("500", "mediaUserId can't be null", null)
-                mediaUserId = "0"
+                return;
             }
             if (oaid == null || oaid.trim { it <= ' ' }.isEmpty()) {
-//                result.error("500", "mediaUserId can't be null", null);
                 oaid = ""
             }
             val application = activity!!.application
