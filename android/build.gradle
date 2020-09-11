@@ -54,7 +54,8 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation(name:'dy-ad-sdk-1.9.5', ext: 'aar')
     implementation(name:'moku-planet-sdk-1.0.10', ext: 'aar')
-    implementation(name:'xzzq_ywsdk_release_1.1.1', ext: 'aar')
+    // implementation(name:'xzzq_ywsdk_release_1.1.1', ext: 'aar')
+    implementation(name:'yuwan_sdk_1.1.2_debug', ext: 'aar')
     implementation 'com.squareup.okhttp3:okhttp:3.12.10'
     // implementation 'com.tencent.tbs.tbssdk:sdk:43903'
     implementation 'com.alibaba:fastjson:1.2.68'
